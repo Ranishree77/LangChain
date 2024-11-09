@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>ChatWithYourData_Bot</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles.css') }}"
+    />
+  </head>
+  <body>
+    <h1>ChatWithYourData_Bot</h1>
+
+    <!-- File Upload Section -->
+    <div id="upload-section">
+      <label for="file-input">Upload PDF Document:</label>
+      <input type="file" id="file-input" accept=".pdf" />
+      <button onclick="uploadFile()">Load Document</button>
+    </div>
+
+    <!-- Chat Section -->
+    <div id="chat-section">
+      <div id="chat-history"></div>
+      <input
+        type="text"
+        id="user-message"
+        placeholder="Enter your message..."
+      />
+      <button onclick="sendMessage()">Send</button>
+    </div>
+
+    <!-- Controls Section -->
+    <div id="controls-section">
+      <button onclick="clearHistory()">Clear Chat History</button>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+  </body>
+</html>
